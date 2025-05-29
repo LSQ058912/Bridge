@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.at-list__item-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+page {
+    background-color: #F6F7F8 !important;
+}
