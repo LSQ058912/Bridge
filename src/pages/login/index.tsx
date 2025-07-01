@@ -2,8 +2,8 @@
  * @Author: Yanko 904852749@qq.com
  * @Date: 2024-06-06 10:28:50
  * @LastEditors: 赵晨炀 904852749@qq.com
- * @LastEditTime: 2024-06-21 15:11:37
- * @FilePath: /Labwant/src/pages/login/index.tsx
+ * @LastEditTime: 2025-07-01 16:19:59
+ * @FilePath: /Labwant3/src/pages/login/index.tsx
  * @Description: 登录页面
  *
  * Copyright (c) 2024 by Yanko, All Rights Reserved.
@@ -11,7 +11,7 @@
 import { Page } from "@/components/Page";
 import { cn } from "@/lib/utils";
 import { View, Image, Picker, Form, Button } from "@tarojs/components";
-import {useState } from "react";
+import { useState } from "react";
 import { AtList, AtListItem } from "taro-ui";
 import { useImmutableQuery } from "@/hooks/useQuery";
 import { useMutate } from "@/hooks/useMutate";
@@ -22,13 +22,12 @@ import Taro from "@tarojs/taro";
 import { showInfoToast } from "@/lib/tip";
 import { ValidateInput } from "@/components/ValidateInput";
 
-const units = ["单位1", "单位2", "单位2", "单位3"];
+const units = ["海军"];
 
 export default function Login() {
-    const [unit, setUnit] = useState("");
+    const [unit, setUnit] = useState(units[0]);
     const { data: code, mutate: refresh } = useImmutableQuery("/auth/code");
     const { trigger: login } = useMutate("/auth/login", { showLoading: true });
-
 
     const onChange = (e) => {
         setUnit(units[e.detail.value]);
@@ -42,10 +41,10 @@ export default function Login() {
     const submitHandle = (e) => {
         const { unit, password } = e.detail.value;
         console.log(e.detail.value);
-        if (!unit) {
-            showInfoToast("请选择单位");
-            return;
-        }
+        // if (!unit) {
+        //     showInfoToast("请选择单位");
+        //     return;
+        // }
 
         var encrypt = new JSEncrypt();
         encrypt.setPublicKey(RSA_PUBLIC_KEY);
@@ -71,7 +70,6 @@ export default function Login() {
         });
     };
 
-
     return (
         <Page className="px-10 pt-6 bg-white">
             <Image
@@ -82,7 +80,10 @@ export default function Login() {
             >
                 Logo
             </Image>
-            <Image className=" block mt-14 w-52 h-52 object-cover  bg-gray-300 mx-auto my-4" src={require("@/assets/jpg/labwant.pic.jpg")}></Image>
+            <Image
+                className=" block mt-14 w-52 h-52 object-cover  bg-gray-300 mx-auto my-4"
+                src={require("@/assets/jpg/labwant.pic.jpg")}
+            ></Image>
 
             <Form onSubmit={submitHandle}>
                 <View className=" flex w-full h-12 rounded-full bg-fill-base items-center relative">
@@ -96,7 +97,7 @@ export default function Login() {
                         placeholderClass=" text-text-placeholder"
                         type="text"
                         placeholder="请输入账号"
-                        rules={[{required: true, message: "请输入账号"}]}
+                        rules={[{ required: true, message: "请输入账号" }]}
                     />
                 </View>
                 <View className=" mt-5 flex w-full h-12 rounded-full bg-fill-base items-center relative">
@@ -107,7 +108,7 @@ export default function Login() {
                         placeholderClass=" text-text-placeholder"
                         password
                         placeholder="请输入密码"
-                        rules={[{required: true, message: "请输入密码"}]}
+                        rules={[{ required: true, message: "请输入密码" }]}
                     />
                 </View>
 
@@ -137,7 +138,7 @@ export default function Login() {
                             placeholderClass=" text-text-placeholder"
                             type="text"
                             placeholder="请输入验证码"
-                            rules={[{required: true, message: "请输入验证码"}]}
+                            rules={[{ required: true, message: "请输入验证码" }]}
                         />
                     </View>
                     <Image
@@ -150,7 +151,7 @@ export default function Login() {
                     formType="submit"
                     className=" mt-5 h-12 flex justify-center items-center rounded-full bg-brand-600 text-white font-normal"
                 >
-                    登陆
+                    登录
                 </Button>
             </Form>
         </Page>
