@@ -17,7 +17,7 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "3.4.6",
+  "libVersion": "3.8.8",
   "srcMiniprogramRoot": "dist/",
   "packOptions": {
     "ignore": [],

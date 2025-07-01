@@ -2,8 +2,8 @@
  * @Author: Yanko 904852749@qq.com
  * @Date: 2024-06-06 19:18:01
  * @LastEditors: 赵晨炀 904852749@qq.com
- * @LastEditTime: 2024-06-26 14:36:20
- * @FilePath: /Labwant/src/pages/intelligentWarehouse/warehouseEnvironment/index.tsx
+ * @LastEditTime: 2025-07-01 15:46:14
+ * @FilePath: /Labwant3/src/pages/intelligentWarehouse/warehouseEnvironment/index.tsx
  * @Description: 仓库环境页面
  *
  * Copyright (c) 2024 by Yanko, All Rights Reserved.
@@ -112,7 +112,7 @@ export const WarehouseEnvironment = memo(function WarehouseEnvironment({
                                 icon={require("../../../assets/svg/water.svg")}
                             >
                                 <View className=" h-16 text-6xl text-brand-600 flex-grow flex items-center justify-center">
-                                    {Math.round(data.data)}
+                                    {Number(data.data).toFixed(1)}
                                 </View>
                             </Card>
                         ))

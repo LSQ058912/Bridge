@@ -2,7 +2,7 @@
  * @Author: 赵晨炀 904852749@qq.com
  * @Date: 2024-06-11 13:40:01
  * @LastEditors: 赵晨炀 904852749@qq.com
- * @LastEditTime: 2025-05-29 11:08:51
+ * @LastEditTime: 2025-07-01 15:44:37
  * @FilePath: /Labwant3/src/api/index.ts
  * @Description: api 请求配置
  *
@@ -13,7 +13,7 @@ import { PROCESS_MAP, PROCESS_MAP_TYPE } from "@/common/contains";
 import Taro from "@tarojs/taro";
 
 // 测试服务器
-const baseUrl = "http://114.55.58.148:19126";
+const baseUrl = "https://fyzcgyxx.com";
 // 测试
 // const baseUrl = "http://192.168.2.84:9126";
 
