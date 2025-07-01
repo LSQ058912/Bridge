@@ -2,8 +2,8 @@
  * @Author: Yanko 904852749@qq.com
  * @Date: 2024-06-06 18:16:19
  * @LastEditors: 赵晨炀 904852749@qq.com
- * @LastEditTime: 2024-06-21 13:23:34
- * @FilePath: /Labwant/src/pages/intelligentWarehouse/index.tsx
+ * @LastEditTime: 2025-07-01 16:00:42
+ * @FilePath: /Labwant3/src/pages/intelligentWarehouse/index.tsx
  * @Description: 智慧仓库页面
  *
  * Copyright (c) 2024 by Yanko, All Rights Reserved.
@@ -30,21 +30,21 @@ export default function IntelligentWarehouse() {
             icon: require("@/assets/png/sleaves.png"),
             activeIcon: require("@/assets/png/sleaves_active.png"),
         },
-        {
-            title: "远程控制",
-            icon: require("@/assets/png/control.png"),
-            activeIcon: require("@/assets/png/control_active.png"),
-        },
-        {
-            title: "报警日志",
-            icon: require("@/assets/png/alarm.png"),
-            activeIcon: require("@/assets/png/alarm_active.png"),
-        },
-        {
-            title: "库存管理",
-            icon: require("@/assets/png/receive.png"),
-            activeIcon: require("@/assets/png/receive_active.png"),
-        },
+        // {
+        //     title: "远程控制",
+        //     icon: require("@/assets/png/control.png"),
+        //     activeIcon: require("@/assets/png/control_active.png"),
+        // },
+        // {
+        //     title: "报警日志",
+        //     icon: require("@/assets/png/alarm.png"),
+        //     activeIcon: require("@/assets/png/alarm_active.png"),
+        // },
+        // {
+        //     title: "库存管理",
+        //     icon: require("@/assets/png/receive.png"),
+        //     activeIcon: require("@/assets/png/receive_active.png"),
+        // },
     ]);
     const [currentIndex, setCurrentIndex] = useState(0);
     // picker选中信息
