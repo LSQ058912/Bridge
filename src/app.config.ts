@@ -14,11 +14,19 @@ export default defineAppConfig({
     "pages/menu/index",
     "pages/login/index",
     "pages/intelligentWarehouse/index",
+    "pages/video/index",
+    "pages/pageHaijun/index"
   ],
   window: {
     backgroundTextStyle: "light",
     navigationBarBackgroundColor: "#fff",
     navigationBarTitleText: "WeChat",
     navigationBarTextStyle: "black",
+  },
+  plugins: {
+    ezplayer: {
+      version: "1.0.13",
+      provider: "wxf2b3a0262975d8c2",
+    },
   },
 });

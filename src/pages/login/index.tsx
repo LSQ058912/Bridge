@@ -15,11 +15,12 @@ import { useState } from "react";
 import { AtList, AtListItem } from "taro-ui";
 import { useImmutableQuery } from "@/hooks/useQuery";
 import { useMutate } from "@/hooks/useMutate";
+// eslint-disable-next-line import/no-named-as-default
 import JSEncrypt from "jsencrypt";
 import { RSA_PUBLIC_KEY } from "@/common/contains";
 import { setHeader } from "@/api";
 import Taro from "@tarojs/taro";
-import { showInfoToast } from "@/lib/tip";
+
 import { ValidateInput } from "@/components/ValidateInput";
 
 const units = ["海军"];

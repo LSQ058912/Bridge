@@ -4,9 +4,9 @@
  * @LastEditors: Yanko 904852749@qq.com
  * @LastEditTime: 2024-06-11 14:49:52
  * @FilePath: /Labwant/src/app.tsx
- * @Description: 
- * 
- * Copyright (c) 2024 by Yanko, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2024 by Yanko, All Rights Reserved.
  */
 import { PropsWithChildren } from "react";
 import { useLaunch } from "@tarojs/taro";
@@ -14,7 +14,8 @@ import { SWRConfig } from "swr";
 import { quertFetcher } from "./api";
 import "./app.css";
 import "./styles/iconfont.css";
-
+// eslint-disable-next-line import/first
+import 'taro-ui/dist/style/index.scss' 
 
 function App({ children }: PropsWithChildren<any>) {
     useLaunch(() => {

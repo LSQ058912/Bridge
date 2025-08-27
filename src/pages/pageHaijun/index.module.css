@@ -1,0 +1,18 @@
+/* Extracted from inline styles for cleaner reuse */
+.block {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #fff;
+}
+
+/* Remove margin on the first block */
+.block:first-child {
+  margin-top: 0;
+}
+
+/* Make AtButton full width when needed (alongside AtButton's `full` prop) */
+.btn {
+  width: 100%;
+}

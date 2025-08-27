@@ -57,7 +57,7 @@
     "@tarojs/shared": "3.6.31",
     "@tarojs/taro": "3.6.31",
     "async-validator": "^4.2.5",
-    "jsencrypt": "^3.3.2",
+    "jsencrypt": "3.3.2",
     "lodash-es": "^4.17.21",
     "moment": "^2.30.1",
     "react": "^18.0.0",

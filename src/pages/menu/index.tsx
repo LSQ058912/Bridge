@@ -56,6 +56,14 @@ export default function Menu() {
                         Taro.navigateTo({ url: "/pages/intelligentWarehouse/index" });
                     }}
                 ></Card>
+                 <Card
+                    title="视频监控"
+                    subTitle="实时监控"
+                    icon={require("@/assets/svg/menu.svg")}
+                    onClick={() => {
+                        Taro.navigateTo({ url: "/pages/pageHaijun/index" });
+                    }}
+                ></Card>
                 <Card
                     className=" opacity-50"
                     title="敬请期待"
