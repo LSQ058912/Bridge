@@ -15,7 +15,10 @@ export default defineAppConfig({
     "pages/login/index",
     "pages/intelligentWarehouse/index",
     "pages/video/index",
-    "pages/pageHaijun/index"
+    "pages/pageHaijun/index",
+    "pages/record/index",
+    "pages/order/index",
+    "pages/orderSuccess/index"
   ],
   window: {
     backgroundTextStyle: "light",

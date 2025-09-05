@@ -64,6 +64,14 @@ export default function Menu() {
                         Taro.navigateTo({ url: "/pages/pageHaijun/index" });
                     }}
                 ></Card>
+                {/* <Card v-if="false"
+                    title="测试"
+                    subTitle="测试"
+                    icon={require("@/assets/svg/menu.svg")}
+                    onClick={() => {
+                        Taro.navigateTo({ url: "/pages/order/index" });
+                    }}
+                ></Card> */}
                 <Card
                     className=" opacity-50"
                     title="敬请期待"

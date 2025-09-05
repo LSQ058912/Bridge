@@ -21,8 +21,8 @@ function Index() {
 
   const playerConfig = useMemo(() => {
     return {
-      accessToken: "at.2tzeojyq33jcdhzu7bke0exo4pwp55aj-39lj1nc9xx-1x0sjrm-vvle318s0",
-      url: `rtmp://open.ys7.com/AD0412332/${channelNo}/live`,
+      accessToken: "at.bvji9lw27nawq1y29wauazrw447cwjkb-6pnv3uewus-0acc5pb-tgjzwin4m",
+      url: `rtmp://open.ys7.com/AD0412332/${channelNo}/local/2025-08-28 10:56:00/2025-08-28 11:56:00`,
       deviceSerial: "AD0412332", // 从URL中提取的设备序列号
       channelNo: channelNo,
       verifyCode: "haijunjunyi1" // 如果设备有验证码，在这里设置
@@ -176,7 +176,7 @@ function Index() {
   id="ezplayer"
   accessToken={playerConfig.accessToken}
   url={playerConfig.url}
-  plugins="talk,voice,capture,mirror"
+  plugins="talk,voice,capture,record,mirror,playback"
   recPlayTime=""
   width="100%"
   height="100%"
