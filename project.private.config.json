@@ -19,6 +19,18 @@
     "ignoreDevUnusedFiles": true,
     "bigPackageSizeSupport": false
   },
-  "condition": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/diandan/index",
+          "pathName": "pages/diandan/index",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        }
+      ]
+    }
+  },
   "libVersion": "3.9.2"
 }
