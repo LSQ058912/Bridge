@@ -1,0 +1,169 @@
+.cartoon-sun {
+    position: absolute;
+    width: var(--sun-size, 80px);
+    height: var(--sun-size, 80px);
+    z-index: 10;
+    
+    &.animated {
+      .sun-body {
+        animation: sun-pulse 3s ease-in-out infinite;
+      }
+      
+      .sun-rays {
+        animation: sun-rotate 20s linear infinite;
+      }
+      
+      .ray {
+        animation: ray-twinkle 2s ease-in-out infinite;
+      }
+    }
+  }
+  
+  .sun-rays {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .ray {
+    position: absolute;
+    width: calc(var(--sun-size,1000px) * 0.15);
+    height: calc(var(--sun-size, 1000px) * 0.4);
+    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    border-radius: 50%;
+    top: calc(var(--sun-size, 100px) * -0.15);
+    left: 50%;
+    transform-origin: 50% calc(var(--sun-size, 100px) * 0.65);
+    margin-left: calc(var(--sun-size, 100px) * -0.075);
+    box-shadow: 0 0 calc(var(--sun-size, 100px) * 0.1) rgba(255, 215, 0, 0.6);
+  }
+  
+  .sun-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, #FFD700, #FFA500);
+    border-radius: 50%;
+    box-shadow: 
+      0 0 calc(var(--sun-size, 80px) * 0.2) rgba(255, 215, 0, 0.8),
+      inset calc(var(--sun-size, 80px) * 0.05) calc(var(--sun-size, 80px) * 0.05) calc(var(--sun-size, 80px) * 0.1) rgba(255, 255, 255, 0.3);
+  }
+  
+  .sun-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .eyes {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .eye {
+    width: calc(var(--sun-size, 80px) * 0.08);
+    height: calc(var(--sun-size, 80px) * 0.08);
+    background: #333;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .eye::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    width: 30%;
+    height: 30%;
+    background: white;
+    border-radius: 50%;
+  }
+  
+  .mouth {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(var(--sun-size, 80px) * 0.25);
+    height: calc(var(--sun-size, 80px) * 0.15);
+    border: calc(var(--sun-size, 80px) * 0.02) solid #333;
+    border-top: none;
+    border-radius: 0 0 calc(var(--sun-size, 80px) * 0.25) calc(var(--sun-size, 80px) * 0.25);
+    background: #FF6B6B;
+  }
+  
+  .cheek {
+    position: absolute;
+    width: calc(var(--sun-size, 80px) * 0.12);
+    height: calc(var(--sun-size, 80px) * 0.08);
+    background: rgba(255, 107, 107, 0.4);
+    border-radius: 50%;
+    top: 48%;
+  }
+  
+  .cheek-left {
+    left: 15%;
+  }
+  
+  .cheek-right {
+    right: 15%;
+  }
+  
+  // 动画效果
+  @keyframes sun-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes sun-pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes ray-twinkle {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(0.95);
+    }
+  }
+  
+  // 悬停效果
+  .cartoon-sun:hover {
+    .sun-body {
+      animation-duration: 1s !important;
+    }
+    
+    .eye {
+      animation: eye-blink 0.5s ease-in-out;
+    }
+  }
+  
+  @keyframes eye-blink {
+    0%, 90%, 100% {
+      transform: scaleY(1);
+    }
+    95% {
+      transform: scaleY(0.1);
+    }
+  }

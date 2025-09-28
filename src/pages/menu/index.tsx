@@ -65,13 +65,21 @@ export default function Menu() {
                     }}
                 ></Card>
                 {/* <Card v-if="false"
-                    title="测试"
-                    subTitle="测试"
+                    title="线上报名"
+                    subTitle="报名"
                     icon={require("@/assets/svg/menu.svg")}
                     onClick={() => {
                         Taro.navigateTo({ url: "/pages/order/index" });
                     }}
                 ></Card> */}
+                  <Card v-if="false"
+                    title="线上点单"
+                    subTitle="点单"
+                    icon={require("@/assets/svg/menu.svg")}
+                    onClick={() => {
+                        Taro.navigateTo({ url: "/pages/diandan/index" });
+                    }}
+                ></Card>
                 <Card
                     className=" opacity-50"
                     title="敬请期待"

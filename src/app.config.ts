@@ -18,7 +18,8 @@ export default defineAppConfig({
     "pages/pageHaijun/index",
     "pages/record/index",
     "pages/order/index",
-    "pages/orderSuccess/index"
+    "pages/orderSuccess/index",
+    "pages/diandan/index"
   ],
   window: {
     backgroundTextStyle: "light",
