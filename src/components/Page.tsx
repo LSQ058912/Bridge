@@ -22,7 +22,7 @@ export function Page({
 }) {
   return (
     <View
-      className={cn(" min-h-[100vh] h-full box-border px-4 bg-neutral-4 relative", className)}
+      className={cn(" min-h-[100vh] h-full box-border px-0 bg-neutral-4 relative", className)}
     >
       {children}
     </View>

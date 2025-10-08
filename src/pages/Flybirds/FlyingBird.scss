@@ -1,84 +1,221 @@
 .flying-bird {
+  position: absolute;
+  top: 20%;
+  left: -100px;
+  z-index: 10;
+  opacity: 0;
+  
+  &.flying {
+    opacity: 1;
+    animation: fly-across var(--duration, 8s) linear infinite;
+  }
+}
+
+@keyframes fly-across {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px));
+  }
+}
+
+.cartoon-person {
+  position: relative;
+  width: var(--size, 50px);
+  height: calc(var(--size, 50px) * 2);
+  transform-origin: center center;
+  animation: person-wave 1.5s ease-in-out infinite;
+}
+
+.person-head {
+  position: absolute;
+  width: 60%;
+  height: 30%;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  border-radius: 50%;
+  top: 0;
+  left: 20%;
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  
+  &::after {
+    content: '';
     position: absolute;
-    top: 20%;
-    left: -100px;
-    z-index: 10;
-    opacity: 0;
-    
-    &.flying {
-      opacity: 1;
-      animation: fly-across var(--duration, 8s) linear infinite;
-    }
-  }
-  
-  @keyframes fly-across {
-    0% {
-      transform: translateX(-100px);
-    }
-    100% {
-      transform: translateX(calc(100vw + 100px));
-    }
-  }
-  
-  .bird {
-    position: relative;
-    width: var(--size, 30px);
-    height: calc(var(--size, 30px) * 0.6);
-  }
-  
-  .wing {
-    position: absolute;
-    background: #333;
-    border-radius: 50% 10% 50% 10%;
-    animation: flap 0.5s ease-in-out infinite alternate;
-  }
-  
-  .wing-left {
-    width: calc(var(--size, 30px) * 0.8);
-    height: calc(var(--size, 30px) * 0.3);
-    top: 0;
-    left: 0;
-    transform-origin: right center;
-  }
-  
-  .wing-right {
-    width: calc(var(--size, 30px) * 0.8);
-    height: calc(var(--size, 30px) * 0.3);
-    top: 0;
-    right: 0;
-    transform-origin: left center;
-    transform: scaleX(-1);
-  }
-  
-  .body {
-    position: absolute;
-    width: calc(var(--size, 30px) * 0.3);
-    height: calc(var(--size, 30px) * 0.6);
-    background: #666;
+    top: 10%;
+    right: 15%;
+    width: 20%;
+    height: 25%;
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    transform: rotate(-30deg);
+  }
+}
+
+.face-eyes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 15%;
+    height: 20%;
+    background: #333;
+    border-radius: 50%;
+    top: 35%;
   }
   
-  @keyframes flap {
-    0% {
-      transform: rotateZ(0deg);
-    }
-    100% {
-      transform: rotateZ(-20deg);
-    }
+  &::before {
+    left: 25%;
   }
   
-  .wing-right {
-    animation: flap-right 0.5s ease-in-out infinite alternate;
+  &::after {
+    right: 25%;
   }
+}
+
+.face-mouth {
+  position: absolute;
+  width: 40%;
+  height: 20%;
+  border: 2px solid #ff6b6b;
+  border-top: none;
+  border-radius: 0 0 50% 50%;
+  bottom: 15%;
+  left: 30%;
+}
+
+.person-body {
+  position: absolute;
+  width: 70%;
+  height: 35%;
+  background: linear-gradient(to bottom, #ff6b6b, #ee5a52);
+  border-radius: 20px 20px 10px 10px;
+  top: 32%;
+  left: 15%;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.person-arms {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.arm {
+  position: absolute;
+  width: 20%;
+  height: 28%;
+  background: linear-gradient(to bottom, #ffd700, #ffed4e);
+  border-radius: 15px;
+  top: 35%;
   
-  @keyframes flap-right {
-    0% {
-      transform: scaleX(-1) rotateZ(0deg);
-    }
-    100% {
-      transform: scaleX(-1) rotateZ(-20deg);
-    }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 40%;
+    background: #ffd700;
+    border-radius: 50%;
+    bottom: -15%;
+    left: 10%;
   }
+}
+
+.arm-left {
+  left: 0;
+  transform-origin: top center;
+  animation: wave-left 1.5s ease-in-out infinite;
+}
+
+.arm-right {
+  right: 0;
+  transform-origin: top center;
+  animation: wave-right 1.5s ease-in-out infinite;
+}
+
+.person-legs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.leg {
+  position: absolute;
+  width: 22%;
+  height: 30%;
+  background: linear-gradient(to bottom, #4a90e2, #357abd);
+  border-radius: 10px;
+  top: 68%;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 30%;
+    background: #333;
+    border-radius: 10px 10px 5px 5px;
+    bottom: -12%;
+    left: 5%;
+  }
+}
+
+.leg-left {
+  left: 22%;
+  animation: walk-left 1.5s ease-in-out infinite;
+}
+
+.leg-right {
+  right: 22%;
+  animation: walk-right 1.5s ease-in-out infinite;
+}
+
+@keyframes person-wave {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+}
+
+@keyframes wave-left {
+  0%, 100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes wave-right {
+  0%, 100% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes walk-left {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes walk-right {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
